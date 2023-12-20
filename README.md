@@ -4,7 +4,8 @@
 Dieses Projekt bietet eine Lösung, um eine dynamische Slideshow in einem Wartezimmer zu präsentieren. Die Inhalte der Slideshow werden über eine JSON-Konfigurationsdatei gesteuert, die verschiedene Typen von Medien unterstützt, darunter Bilder, Videos, Webseiten (über iFrames) und HTML-Inhalte.
 
 ## JSON-Konfigurationsformat
-- Die JSON-Datei besteht aus einem `default`-Objekt und einem `slides`-Array.
+- Die JSON-Datei besteht aus einem `default`-Objekt und einem `slides`-Array sowie einem manualMode-Flag (true/false).
+- `manualMode` gibt an, ob die Slideshow manuell oder automatisch gesteuert werden soll.
 - `default` enthält Standardwerte für Übergangszeiten (`transitionTime`), Übergangstypen (`transitionType`) und Hintergrundfarben (`backgroundColor`).
 - `slides` ist ein Array von Objekten, wobei jedes Objekt einen Slide darstellt.
 - Slide-Objekte können folgende Eigenschaften haben:
