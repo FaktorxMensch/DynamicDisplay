@@ -1,4 +1,5 @@
 const slideContainer = document.getElementById('slide-container');
+let manualMode = false;
 let slides = [];
 let currentSlideIndex = 0;
 
@@ -7,6 +8,7 @@ fetch('slides.json')
     .then(response => response.json())
     .then(data => {
         slides = data.slides;
+        manualMode = data.manualMode;
         setupSlide();
     });
 
@@ -42,7 +44,12 @@ function setupSlide() {
             break;
     }
 
-    setTimeout(nextSlide, slide.displayTime || defaultSettings.displayTime);
+    if (manualMode) {
+        element.onclick = nextSlide;
+        slideContainer.onclick = nextSlide;
+    } else {
+        setTimeout(nextSlide, slide.displayTime || defaultSettings.displayTime);
+    }
 }
 
 function nextSlide() {

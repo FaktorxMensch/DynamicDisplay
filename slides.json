@@ -1,4 +1,5 @@
 {
+  "manualMode": true,
   "default": {
     "transitionTime": 500,
     "transitionType": "fade",
@@ -8,7 +9,7 @@
     {
       "type": "image",
       "source": "bild1.jpg",
-      "displayTime": 10000,
+      "displayTime": 1000,
       "background": "#000000",
       "imageMode": "cover"
     },
