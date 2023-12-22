@@ -1,16 +1,56 @@
+const data = {
+    "manualMode": false,
+    "default": {
+        "transitionTime": 500,
+        "transitionType": "fade",
+        "backgroundColor": "#FFFFFF"
+    },
+    "slides": [
+        {
+            "type": "image",
+            "source": "bild1.jpg",
+            "displayTime": 10000,
+            "background": "#000000",
+            "imageMode": "cover"
+        },
+        {
+            "type": "image",
+            "source": "bild4.jpg",
+            "displayTime": 10000,
+            "background": "#FFFFFF",
+            "imageMode": "cover"
+        },
+        {
+            "type": "image",
+            "source": "bild2.jpg",
+            "displayTime": 13000,
+            "background": "#FFFFFF",
+            "imageMode": "cover"
+        },
+        {
+            "type": "image",
+            "source": "bild3.jpg",
+            "displayTime": 18000,
+            "background": "#DDDDDD",
+            "imageMode": "cover"
+        }
+    ]
+}
+
 const slideContainer = document.getElementById('slide-container');
 let manualMode = false;
 let slides = [];
 let currentSlideIndex = 0;
 
 // Laden der JSON-Daten
-fetch('slides.json')
-    .then(response => response.json())
-    .then(data => {
-        slides = data.slides;
-        manualMode = data.manualMode;
-        setupSlide();
-    });
+// fetch('slides.json')
+//     .then(response => response.json())
+//     .then(data => {
+slides = data.slides;
+manualMode = data.manualMode;
+setupSlide();
+
+// });
 
 function setupSlide() {
     const slide = slides[currentSlideIndex];
